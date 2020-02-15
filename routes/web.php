@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/logout', function() { auth()->logout(); });
+
+Route::get('/home', 'HomeController@index')->name('home');
