@@ -20,3 +20,9 @@ Auth::routes();
 Route::get('/logout', function() { auth()->logout(); });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// reports
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('series', 'SeriesController');
+});
